@@ -1,9 +1,12 @@
 #! /bin/bash
 
-BASE=${1%.*}
-MAX_LAMBDA=0
-
-for ((i=0; i <= $MAX_LAMBDA; i++))
+for ARG in "$@"
 do
-    sed "s/%L%/$i/g" $1 > ${BASE}_$i.mdp
+    BASE=${ARG%.*}
+    MAX_LAMBDA=5
+
+    for ((i=0; i <= $MAX_LAMBDA; i++))
+    do
+        sed "s/%L%/$i/g" $ARG > ${BASE/template/$i}.mdp
+    done
 done
