@@ -6,7 +6,6 @@ set -e
 
 BASE_DIR=`pwd`
 PERTURBATIONS=$BASE_DIR/_perturbations/gromacs/
-MDP_TEMPLATES=~/tools/mdp-templates
 
 mkdir Production
 cd Production
@@ -25,10 +24,6 @@ do
     cd vacuum
     cp $FESETUP_MORPH/morph.{top,gro} .
     cp $FESETUP_MORPH/pert.{atp,itp} .
-    mkdir MDP
-    cd MDP
-    cp $MDP_TEMPLATES/vacuum/*.mdp .
-    cd ..
     cd ..
 
 
@@ -44,10 +39,6 @@ do
         cd $STATE
         cp $FESETUP_MORPH/$STATE/morph.{top,gro} .
         cp $FESETUP_MORPH/$STATE/pert.{atp,itp} .
-        mkdir MDP
-        cd MDP
-        cp $MDP_TEMPLATES/$STATE/*.mdp .
-        cd ..
         cd ..
     done
 
