@@ -3,7 +3,7 @@
 for ARG in "$@"
 do
     BASE=${ARG%.*}
-    MAX_LAMBDA=5
+    MAX_LAMBDA=10
 
     for ((i=0; i <= $MAX_LAMBDA; i++))
     do
