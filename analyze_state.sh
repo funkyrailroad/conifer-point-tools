@@ -9,4 +9,4 @@ for i in `find .. -name md*.xvg`
 do
     ln -s $i .
 done
-gmx bar -f md*.xvg -o -oi
+$GMX/gmx bar -f md*.xvg -o -oi
