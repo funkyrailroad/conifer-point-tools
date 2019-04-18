@@ -1,0 +1,4 @@
+; Vectors of lambda specified here
+; Each combination is an index that is retrieved from init_lambda_state for each simulation
+; init_lambda_state        0    1
+fep_lambdas              = 0.00 1.00
