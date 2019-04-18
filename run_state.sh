@@ -37,7 +37,8 @@ do
 
     # Iterative calls to grompp and mdrun to run the simulations
 
-    $GMX/gmx grompp -f $MDP/em_steep_$LAMBDA.mdp -c $FREE_ENERGY/morph.gro -p $FREE_ENERGY/morph.top -o min$LAMBDA.tpr
+    $GMX/gmx grompp -f $MDP/em_steep_$LAMBDA.mdp -c $FREE_ENERGY/morph.gro \
+        -p $FREE_ENERGY/morph.top -o min$LAMBDA.tpr
 
     $GMX/gmx mdrun -deffnm min$LAMBDA
 
@@ -52,7 +53,8 @@ do
     mkdir NVT
     cd NVT
 
-    $GMX/gmx grompp -f $MDP/nvt_$LAMBDA.mdp -c ../EM/min$LAMBDA.gro -p $FREE_ENERGY/morph.top -o nvt$LAMBDA.tpr
+    $GMX/gmx grompp -f $MDP/nvt_$LAMBDA.mdp -c ../EM/min$LAMBDA.gro \
+        -p $FREE_ENERGY/morph.top -o nvt$LAMBDA.tpr
 
     $GMX/gmx mdrun -deffnm nvt$LAMBDA
 
@@ -69,7 +71,8 @@ do
     mkdir NPT
     cd NPT
 
-    $GMX/gmx grompp -f $MDP/npt_$LAMBDA.mdp -c ../NVT/nvt$LAMBDA.gro -p $FREE_ENERGY/morph.top -t ../NVT/nvt$LAMBDA.cpt -o npt$LAMBDA.tpr
+    $GMX/gmx grompp -f $MDP/npt_$LAMBDA.mdp -c ../NVT/nvt$LAMBDA.gro \
+        -p $FREE_ENERGY/morph.top -t ../NVT/nvt$LAMBDA.cpt -o npt$LAMBDA.tpr
 
     $GMX/gmx mdrun -deffnm npt$LAMBDA
 
@@ -86,7 +89,8 @@ do
     mkdir Production_MD
     cd Production_MD
 
-    $GMX/gmx grompp -f $MDP/md_$LAMBDA.mdp -c ../NPT/npt$LAMBDA.gro -p $FREE_ENERGY/morph.top -t ../NPT/npt$LAMBDA.cpt -o md$LAMBDA.tpr
+    $GMX/gmx grompp -f $MDP/md_$LAMBDA.mdp -c ../NPT/npt$LAMBDA.gro \
+        -p $FREE_ENERGY/morph.top -t ../NPT/npt$LAMBDA.cpt -o md$LAMBDA.tpr
 
     $GMX/gmx mdrun -deffnm md$LAMBDA
 
