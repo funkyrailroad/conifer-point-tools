@@ -26,6 +26,7 @@ do
     mkdir MDP
     cd MDP
     cp $MDP_TEMPLATES/vacuum/*.mdp .
+    refresh-mdp.sh vacuum
     cd ..
     cd ..
 
@@ -45,6 +46,7 @@ do
         mkdir MDP
         cd MDP
         cp $MDP_TEMPLATES/$STATE/*.mdp .
+        refresh-mdp.sh $STATE
         cd ..
         cd ..
     done
