@@ -4,9 +4,20 @@
 # script
 set -e
 
+
 BASE_DIR=`pwd`
 PERTURBATIONS=$BASE_DIR/_perturbations/gromacs/
 MDP_TEMPLATES=~/tools/mdp-templates
+
+
+if [ $# -eq 0 ]
+    then
+    echo "Provide lambda file as argument"
+    exit 1
+fi
+
+append-lambdas.sh $1
+. $MDP_TEMPLATES/lambda-sequences/$1.sh
 
 mkdir Production
 cd Production
@@ -26,7 +37,7 @@ do
     mkdir MDP
     cd MDP
     cp $MDP_TEMPLATES/vacuum/*.mdp .
-    refresh-mdp.sh vacuum
+    refresh-mdp.sh vacuum $MAX_LAMBDA 
     cd ..
     cd ..
 
@@ -46,7 +57,7 @@ do
         mkdir MDP
         cd MDP
         cp $MDP_TEMPLATES/$STATE/*.mdp .
-        refresh-mdp.sh $STATE
+        refresh-mdp.sh $STATE $MAX_LAMBDA
         cd ..
         cd ..
     done

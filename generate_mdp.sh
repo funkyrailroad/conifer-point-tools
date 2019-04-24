@@ -1,8 +1,7 @@
 #! /bin/bash
 
-MAX_LAMBDA=10
-
-for ARG in "$@"
+MAX_LAMBDA=$1
+for ARG in "${@:2}"
 do
     BASE=${ARG%.*}
     echo $BASE
