@@ -1,6 +1,6 @@
 ; Run control
 integrator               = steep 
-nsteps                   = 100
+nsteps                   = 5000
 ; EM criteria and other stuff
 emtol                    = 100
 emstep                   = 0.01
