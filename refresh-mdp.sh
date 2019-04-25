@@ -10,7 +10,8 @@ fi
 
 echo "Did you rerun append-lambda.sh?"
 
+HOME=/mnt/projects-neuse/jake/tools/mdp-templates
 STATE=$1
 MAX_LAMBDA=$2
-cp ~/tools/mdp-templates/$STATE/* .
+cp $HOME/$STATE/* .
 generate_mdp.sh $MAX_LAMBDA *template.mdp

@@ -15,7 +15,7 @@ if [ $# -eq 0 ]
 fi
 
 
-HOME=~/tools/mdp-templates
+HOME=/mnt/projects-neuse/jake/tools/mdp-templates
 STATES="complex solvated vacuum"
 LAMBDA_FILE=$1
 for STATE in $STATES

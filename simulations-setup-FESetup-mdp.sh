@@ -7,7 +7,7 @@
 
 BASE_DIR=`pwd`
 PERTURBATIONS=$BASE_DIR/_perturbations/gromacs/
-MDP_TEMPLATES=~/tools/mdp-templates
+MDP_TEMPLATES=/mnt/projects-neuse/jake/tools/mdp-templates
 
 mkdir Production
 cd Production

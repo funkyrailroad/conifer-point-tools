@@ -7,7 +7,7 @@ GMX=~/build/gromacs/bin
 MIN_LAMBDA=0
 MAX_LAMBDA=5
 
-MDP_TEMPLATES=~/tools/mdp-templates
+MDP_TEMPLATES=/mnt/projects-neuse/jake/tools/mdp-templates
 
 
 # Set some environment variables 
