@@ -6,7 +6,7 @@ GMX=~/build/gromacs/bin
 #GMX=~/build/gromacs-2018.5/bin
 
 MIN_LAMBDA=0
-MAX_LAMBDA=21
+MAX_LAMBDA=10
 
 MDP_TEMPLATES=~/tools/mdp-templates
 

@@ -5,7 +5,7 @@ set -e
 GMX=~/build/gromacs/bin
 
 MIN_LAMBDA=0
-MAX_LAMBDA=11
+MAX_LAMBDA=10
 
 MDP_TEMPLATES=~/tools/mdp-templates
 
