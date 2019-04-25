@@ -3,6 +3,7 @@ set -e
 
 # Change to the location of your GROMACS-2018 installation
 GMX=~/build/gromacs/bin
+#GMX=~/build/gromacs-2018.5/bin
 
 MIN_LAMBDA=0
 MAX_LAMBDA=21
