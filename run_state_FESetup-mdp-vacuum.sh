@@ -37,7 +37,7 @@ do
 
     # Iterative calls to grompp and mdrun to run the simulations
 
-    $GMX/gmx grompp -f $MDP/_vac_$LAMBDA.mdp -c $FREE_ENERGY/morph.gro -p $FREE_ENERGY/morph.top -o min$LAMBDA.tpr
+    $GMX/gmx grompp -f $MDP/_vac_$LAMBDA.mdp -c $FREE_ENERGY/morph.gro -p $FREE_ENERGY/morph.top -o md$LAMBDA.tpr
 
     $GMX/gmx mdrun -deffnm md$LAMBDA
 
