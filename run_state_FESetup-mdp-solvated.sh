@@ -17,7 +17,7 @@ MDP=$FREE_ENERGY/MDP
 echo ".mdp files are stored in $MDP"
 
 
-for (( i = $MIN_LAMBDA; i < $MAX_LAMBDA; i++ ))
+for (( i = $MIN_LAMBDA; i <= $MAX_LAMBDA; i++ ))
 do
     LAMBDA=$i
 
