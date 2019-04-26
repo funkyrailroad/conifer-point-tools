@@ -30,16 +30,16 @@ do
 
     # populate state folders with position and top files
     # structure of vacuum files and complex/solvated are different
-    mkdir vacuum
-    cd vacuum
-    cp $FESETUP_MORPH/morph.{top,gro} .
-    cp $FESETUP_MORPH/pert.{atp,itp} .
-    mkdir MDP
-    cd MDP
-    cp $MDP_TEMPLATES/vacuum/*.mdp .
-    refresh-mdp.sh vacuum $MAX_LAMBDA 
-    cd ..
-    cd ..
+    #mkdir vacuum
+    #cd vacuum
+    #cp $FESETUP_MORPH/morph.{top,gro} .
+    #cp $FESETUP_MORPH/pert.{atp,itp} .
+    #mkdir MDP
+    #cd MDP
+    #cp $MDP_TEMPLATES/vacuum/*.mdp .
+    #refresh-mdp.sh vacuum $MAX_LAMBDA
+    #cd ..
+    #cd ..
 
 
     # not every morph pair will have complex and solvated files, this finds
