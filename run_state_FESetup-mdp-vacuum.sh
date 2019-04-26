@@ -1,22 +1,8 @@
 #!/bin/bash
 set -e
 
-# Change to the location of your GROMACS-2018 installation
-GMX=~/build/gromacs/bin
-#GMX=~/build/gromacs-2018.5/bin
-
-MIN_LAMBDA=0
-MAX_LAMBDA=10
-
-MDP_TEMPLATES=/mnt/projects-neuse/jake/tools/mdp-templates
-
-
-# Set some environment variables 
-FREE_ENERGY=`pwd`
-echo "Free energy home directory set to $FREE_ENERGY"
-MDP=$FREE_ENERGY/MDP
-echo ".mdp files are stored in $MDP"
-
+TOOLS_HOME=`dirname $0`
+source $TOOLS_HOME/run_staterc
 
 for (( i = $MIN_LAMBDA; i <= $MAX_LAMBDA; i++ ))
 do
