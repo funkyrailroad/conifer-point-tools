@@ -1,16 +1,22 @@
 #! /bin/bash
+set -e
 
-cd solvated
-analyze_state.sh
-cd ../complex
-analyze_state.sh
-cd xvg-files
-echo
-echo "Complex Values"
-echo
-python ~/tools/plot_gromacs_free_energy_diff.py
-cd ../../solvated/xvg-files
-echo
-echo "Solvated Values"
-echo
-python ~/tools/plot_gromacs_free_energy_diff.py
+TOOLS_PATH=/mnt/projects-neuse/jake/tools/
+STATES=`\ls -d */  `
+
+for STATE in $STATES
+do
+    cd $STATE
+    # if xvg-files doesn't exist
+    analyze_state.sh > /dev/null
+    cd ..
+    pwd
+done
+
+for STATE in $STATES
+do
+    cd $STATE/xvg-files
+    printf "\n$STATE\b values\n"
+    python $TOOLS_PATH/plot_gromacs_free_energy_diff.py
+    cd ../..
+done
