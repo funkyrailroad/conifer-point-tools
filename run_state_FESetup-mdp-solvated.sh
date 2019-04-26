@@ -1,8 +1,17 @@
 #!/bin/bash
 set -e
 
+if [ $# -le 1 ]
+    then
+    echo "Provide min and max lambda as arguments"
+    exit 1
+fi
+
 TOOLS_HOME=`dirname $0`
 source $TOOLS_HOME/run_staterc
+
+MIN_LAMBDA=$1
+MAX_LAMBDA=$2
 
 for (( i = $MIN_LAMBDA; i <= $MAX_LAMBDA; i++ ))
 do
