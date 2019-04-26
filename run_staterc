@@ -1,5 +1,14 @@
 # Change to the location of your GROMACS-2018 installation
-GMX=~/build/gromacs/bin
+USER=`whoami`
+
+if [[ $USER = "bio" ]]; then
+    GMX=/usr/local/gromacs/bin
+    echo $GMX
+elif [[ $USER = "jake" ]]; then
+    GMX=~/build/gromacs/bin
+    echo $GMX
+fi
+
 
 MDP_TEMPLATES=/mnt/projects-neuse/jake/tools/mdp-templates
 
